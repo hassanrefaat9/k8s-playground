@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+  labels:
+    app: web-app
+spec:
+  selector:
+    matchLabels:
+      app: web-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+        - name: webserver-k8s
+          image:  thenerddev/webserver-k8s
+          ports:
+            - containerPort: 3000
