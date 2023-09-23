@@ -19,4 +19,3 @@ spec:
           image:  bitnami/apache:latest
           ports:
             - containerPort: 80
-
